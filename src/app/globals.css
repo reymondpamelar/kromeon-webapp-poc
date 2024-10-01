@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  @font-face {
+    font-family: 'PPNeueMontreal-bold';
+    src: local('PPNeueMontreal'), url(./fonts/PPNeueMontreal-Bold.otf);
+  }
+  @font-face {
+    font-family: 'PPNeueMontreal-book';
+    src: local('PPNeueMontreal'), url(./fonts/PPNeueMontreal-Book.otf);
+  }
+  @font-face {
+    font-family: 'PPNeueMontreal-italic';
+    src: local('PPNeueMontreal'), url(./fonts/PPNeueMontreal-Italic.otf);
+  }
+  @font-face {
+    font-family: 'PPNeueMontreal-medium';
+    src: local('PPNeueMontreal'), url(./fonts/PPNeueMontreal-Medium.otf);
+  }
+  @font-face {
+    font-family: 'PPNeueMontreal-SemiBolditalic';
+    src: local('PPNeueMontreal'), url(./fonts/PPNeueMontreal-SemiBolditalic.otf);
+  }
+  @font-face {
+    font-family: 'PPNeueMontreal-thin';
+    src: local('PPNeueMontreal'), url(./fonts/PPNeueMontreal-Thin.otf);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.animate-delay-fast{
+  animation-delay: 0.5s;
+}
+
+.animate-delay-faster{
+  animation-delay: 1.5s;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+}
